@@ -23,4 +23,11 @@ class Uppgift2Test {
         assertThat(add.add("3")).isEqualTo(3);
 
     }
+
+    @Test
+    @DisplayName("Send in an empty string and receive 0")
+    void sendInAnEmptyStringAndReceive0() {
+
+        assertThat(add.add("")).isEqualTo(0);
+    }
 }
