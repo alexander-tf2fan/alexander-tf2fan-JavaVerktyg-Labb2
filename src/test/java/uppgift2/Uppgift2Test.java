@@ -15,4 +15,12 @@ class Uppgift2Test {
         assertThat(add.add("2,5")).isEqualTo(7);
 
     }
+
+    @Test
+    @DisplayName("Send 1 number and receive the same number back")
+    void send1NumberAndReceiveTheSameNumberBack() {
+
+        assertThat(add.add("3")).isEqualTo(3);
+
+    }
 }
