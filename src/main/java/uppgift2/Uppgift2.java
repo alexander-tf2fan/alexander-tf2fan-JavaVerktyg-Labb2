@@ -1,12 +1,16 @@
 package uppgift2;public class Uppgift2 {
 
-    public int add(String number){
-        if(number.isEmpty())
+    public int add(String number) {
+        int sum = 0;
+        if (number.isEmpty())
             return 0;
-        String[] splitNumber = number.split(",");
-        if(splitNumber.length == 1)
-            return Integer.parseInt(splitNumber[0]);
-        return Integer.parseInt(splitNumber[0]) + Integer.parseInt(splitNumber[1]);
+        String[] splitStringNumber = number.split(",");
+        int[] actualNumber = new int[splitStringNumber.length];
+        for (int i = 0; i < actualNumber.length; i++) {
+            actualNumber[i] = Integer.parseInt(splitStringNumber[i]);
+            sum += actualNumber[i];
+        }
+        return sum;
     }
 }
 

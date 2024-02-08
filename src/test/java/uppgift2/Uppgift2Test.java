@@ -30,4 +30,11 @@ class Uppgift2Test {
 
         assertThat(add.add("")).isEqualTo(0);
     }
+
+    @Test
+    @DisplayName("Send in unknown amount and receive sum of it back")
+    void sendInUnknownAmountAndReceiveSumOfItBack() {
+
+        assertThat(add.add("3,8,6,4,3")).isEqualTo(24);
+    }
 }
