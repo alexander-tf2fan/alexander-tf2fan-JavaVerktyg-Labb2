@@ -3,8 +3,8 @@ package uppgift2;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.as;
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class Uppgift2Test {
     Uppgift2 add = new Uppgift2();
@@ -52,5 +52,13 @@ class Uppgift2Test {
 
         assertThat(add.add("//;\n1;2")).isEqualTo(3);
     }
+
+    @Test
+    @DisplayName("Sending in a negative will throw an exception with all the negative numbers shown")
+    void sendingInANegativeWillThrowAnExceptionWithAllTheNegativeNumbersShown() {
+
+        assertThatThrownBy(() -> add.add("1,2,-3,4,-5")).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Negatives not allowed[-3, -5]");
+    }
+        
 
 }
