@@ -72,6 +72,12 @@ class Uppgift2Test {
     void takeInAnyLengthOfADelimiterAndStillReturnTheSumOfTheNumbersInTheString() {
         assertThat(add.add("//[***]\n1***2***3")).isEqualTo(6);
     }
+
+    @Test
+    @DisplayName("Checked if the method can filter out multiple delimiters at the same time")
+    void checkIfTheMethodCanFilterOutMultipleDelimitersAtTheSameTime() {
+        assertThat(add.add("//[*][%]\n1*2%3")).isEqualTo(6);
+    }
         
 
 }
