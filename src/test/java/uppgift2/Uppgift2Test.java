@@ -47,8 +47,8 @@ class Uppgift2Test {
     }
 
     @Test
-    @DisplayName("Will find a better name for this later")
-    void willFindABetterNameForThisLater() {
+    @DisplayName("Support different delimiters so that it still returns the sum of the numbers")
+    void SupportDifferentDelimitersSoThatItStillReturnsTheSumOfTheNumbers() {
 
         assertThat(add.add("//;\n1;2")).isEqualTo(3);
     }
@@ -65,6 +65,12 @@ class Uppgift2Test {
     void ifSentANumberBiggerThan1000ThenIgnoreThatNumber() {
 
         assertThat(add.add("5,50,500,5000")).isEqualTo(555);
+    }
+
+    @Test
+    @DisplayName("Take in any length of a delimiter and still return the sum of the numbers in the string")
+    void takeInAnyLengthOfADelimiterAndStillReturnTheSumOfTheNumbersInTheString() {
+        assertThat(add.add("//[***]\n1***2***3")).isEqualTo(6);
     }
         
 
