@@ -46,4 +46,11 @@ class Uppgift2Test {
         assertThat(add.add("1\n2,3")).isEqualTo(6);
     }
 
+    @Test
+    @DisplayName("Will find a better name for this later")
+    void willFindABetterNameForThisLater() {
+
+        assertThat(add.add("//;\n1;2")).isEqualTo(3);
+    }
+
 }
