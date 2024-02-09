@@ -3,6 +3,7 @@ package uppgift2;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class Uppgift2Test {
@@ -37,4 +38,12 @@ class Uppgift2Test {
 
         assertThat(add.add("3,8,6,4,3")).isEqualTo(24);
     }
+
+    @Test
+    @DisplayName("Sending in numbers with new lines between numbers and receive sum of the numbers")
+    void sendingInNumbersWithNewLinesBetweenNumbersAndReceiveSumOfTheNumbers() {
+
+        assertThat(add.add("1\n2,3")).isEqualTo(6);
+    }
+
 }
