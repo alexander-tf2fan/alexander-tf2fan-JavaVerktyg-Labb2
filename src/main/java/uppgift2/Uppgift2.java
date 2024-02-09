@@ -20,7 +20,8 @@ public class Uppgift2 {
                 if (actualNumber[i] < 0) {
                     confirmNegative = true;
                 }
-
+                if (actualNumber[i] > 1000)
+                    continue;
                 sum += actualNumber[i];
 
             }

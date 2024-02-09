@@ -59,6 +59,13 @@ class Uppgift2Test {
 
         assertThatThrownBy(() -> add.add("1,2,-3,4,-5")).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Negatives not allowed[-3, -5]");
     }
+
+    @Test
+    @DisplayName("If sent a number bigger than 1000 then ignore that number")
+    void ifSentANumberBiggerThan1000ThenIgnoreThatNumber() {
+
+        assertThat(add.add("5,50,500,5000")).isEqualTo(555);
+    }
         
 
 }
