@@ -17,6 +17,20 @@ class EmployeeTest {
         assertThat(employee.toString()).isEqualTo("Employee [id=Donald duck, salary=100000.0]");
     }
 
+    @Test
+    @DisplayName("Test setId method in Employee")
+    void testSetIdMethodInEmployee() {
 
+       employee.setId("Test");
+       assertEquals("Test",employee.getId());
+
+    }
+
+    @Test
+    @DisplayName("Test setSalary method in Employee")
+    void testSetSalaryMethodInEmployee() {
+        employee.setSalary(100);
+        assertEquals(100,employee.getSalary());
+    }
 
 }
