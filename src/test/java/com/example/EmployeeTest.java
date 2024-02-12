@@ -33,4 +33,11 @@ class EmployeeTest {
         assertEquals(100,employee.getSalary());
     }
 
+    @Test
+    @DisplayName("Test isPaid metoden and that it returns something")
+    void testIsPaidMetodenAndThatItReturnsSomething() {
+        employee.setPaid(false);
+        assertNotEquals(true,employee.isPaid());
+    }
+
 }
